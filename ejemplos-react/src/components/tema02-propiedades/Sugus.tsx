@@ -1,3 +1,4 @@
+import type { SugusProps2 } from '../../types/sugus.type'
 import './Sugus.css'
 
 interface Styles {
@@ -27,20 +28,8 @@ const styles: Styles = {
     }
 }
 
-type SugusProps = {
-    color: string,
-    sabor: string,
-}
 
-// Union types
-// type nullOString = null | string | number
-
-interface SugusProps2 {
-    color?: 'yellow' | 'orange' | 'red' | 'blue',
-    sabor?: 'limón' | 'naranja' | 'fresa' | 'piña',
-}
-
-// export const Sugus = (props: any) => {
+// export const Sugus = (props: SugusProps2) => {
 export const Sugus = ({color = 'red', sabor = 'fresa'}: SugusProps2) => {
     // console.log(props)
 
@@ -48,12 +37,6 @@ export const Sugus = ({color = 'red', sabor = 'fresa'}: SugusProps2) => {
     // const color = 'yellow'
     // const sabor = props.sabor
     // const color = props.color
-
-    setTimeout(() => {
-        console.log(color)
-        color = 'yellow'
-        console.log(color)
-    }, 1500)
 
     return (
         // <div style={

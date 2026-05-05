@@ -2,16 +2,19 @@ import { Sugus } from "./Sugus"
 
 export const Tema02Propiedades = () => {
 
-    return (
-        <div>
-            <h2>Tema 02: propiedades</h2>
+	return (
+		<div>
+			<h2>Tema 02: propiedades</h2>
 
-            <Sugus color="yellow" sabor="limón" />
-            <Sugus color="blue" sabor="piña" />
-            <Sugus color="orange" sabor="naranja" />
-            <Sugus />
-        </div>
-    )
+			<div className="d-flex jc-center">
+				<Sugus color="yellow" sabor="limón" />
+				<Sugus color="blue" sabor="piña" />
+				<Sugus color="orange" sabor="naranja" />
+				<Sugus />
+			</div>
+
+		</div>
+	)
 }
 
 // () => {}

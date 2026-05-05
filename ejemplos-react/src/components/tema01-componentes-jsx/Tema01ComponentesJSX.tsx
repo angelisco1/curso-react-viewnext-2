@@ -7,7 +7,7 @@ export const Tema01ComponentesJSX = () => {
 
     return (
         <div>
-            <h2>Tema 01: componentes y JSX</h2>
+            <h2 className="titulo">Tema 01: componentes y JSX</h2>
             <p>Bienvenido {nombre} {apellido}</p>
             {/* <input maxLength="2" /> */}
             <input maxLength={2} />
