@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import type { ListaCocktails } from "../../types/cocktails.type"
+import type { ICocktail, ListaCocktails } from "../../types/cocktails.type"
 import { Cocktail } from "./Cocktail"
+import { InfoCocktail } from "./InfoCocktail"
 
 const URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 
@@ -23,7 +24,13 @@ export const BuscadorCocktails = () => {
 
   const [cocktails, setCocktails] = useState<ListaCocktails>([])
   const [filtro, setFiltro] = useState<string>('')
+  const [cocktailSeleccionado, setCocktailSeleccionado] = useState<ICocktail | null>(null)
   
+
+  // useEffect orden:
+  // - fn del return del useEffect
+  // - render
+  // - useEffect
   useEffect(() => {
     console.log('Ha cambiado el filtro')
 
@@ -33,10 +40,15 @@ export const BuscadorCocktails = () => {
 
     console.log('FILTRO 1: ', filtro)
 
-
     return () => {
       console.log('FILTRO 2: ', filtro)
       clearTimeout(idTimeout)
+    }
+  }, [filtro])
+
+  useEffect(() => {
+    if (filtro === '') {
+      setCocktailSeleccionado(null)
     }
   }, [filtro])
   
@@ -44,7 +56,8 @@ export const BuscadorCocktails = () => {
   const componentesCocktails = cocktails.map(cocktail => {
     return <Cocktail
             key={cocktail.idDrink}
-            cocktail={cocktail} />
+            cocktail={cocktail}
+            onSelectCocktail={setCocktailSeleccionado} />
   })
   
   return (
@@ -57,9 +70,15 @@ export const BuscadorCocktails = () => {
       <hr />
 
       <div>
-        {componentesCocktails}
+        {componentesCocktails.length > 0 ? componentesCocktails : <p>No se han encontrado cocktails con el nombre: {filtro}</p>}
       </div>
       
+      <div>
+        {/* {cocktailSeleccionado ? <InfoCocktail cocktail={cocktailSeleccionado} /> : null} */}
+        {/* {cocktailSeleccionado && <InfoCocktail cocktail={cocktailSeleccionado} />} */}
+        {cocktailSeleccionado ? <InfoCocktail cocktail={cocktailSeleccionado} /> : <p>Selecciona un cocktail para ver su información</p>}
+      </div>
+
     </div>
   )
 }

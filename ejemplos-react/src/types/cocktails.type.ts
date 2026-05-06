@@ -20,17 +20,17 @@ export interface ICocktail {
   strIngredient2: string
   strIngredient3: string
   strIngredient4: string
-  strIngredient5: any
-  strIngredient6: any
-  strIngredient7: any
-  strIngredient8: any
-  strIngredient9: any
-  strIngredient10: any
-  strIngredient11: any
-  strIngredient12: any
-  strIngredient13: any
-  strIngredient14: any
-  strIngredient15: any
+  strIngredient5: string
+  strIngredient6: string
+  strIngredient7: string
+  strIngredient8: string
+  strIngredient9: string
+  strIngredient10: string
+  strIngredient11: string
+  strIngredient12: string
+  strIngredient13: string
+  strIngredient14: string
+  strIngredient15: string
   strMeasure1: string
   strMeasure2: string
   strMeasure3: string
@@ -54,3 +54,5 @@ export interface ICocktail {
 
 
 export type ListaCocktails = Array<ICocktail>
+
+export type IngredientProps = 'strIngredient1' | 'strIngredient2' | 'strIngredient3' | 'strIngredient4' | 'strIngredient5' | 'strIngredient6' | 'strIngredient7' | 'strIngredient8' | 'strIngredient9' | 'strIngredient10' | 'strIngredient11' | 'strIngredient12' | 'strIngredient13' | 'strIngredient14' | 'strIngredient15'

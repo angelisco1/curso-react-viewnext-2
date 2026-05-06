@@ -24,11 +24,12 @@ const fsProm = require('fs/promises')
 //   .then(data => {
 //     console.log(data.toString())
 
-//     return fsProm.readFile('2.txt') 
+//     return fsProm.readFile('2.txt')
 //   })
 //   .then(data => {
 //     console.log(data.toString())
 //   })
+  
 
 // Async / await
 
@@ -39,6 +40,5 @@ const leerArchivosEnOrden = async () => {
   const data2 = await fsProm.readFile('2.txt')
   console.log(data2.toString())
 }
-
 
 leerArchivosEnOrden()
