@@ -6,6 +6,8 @@ import { Tema04Eventos } from './components/tema04-eventos/Tema04Eventos'
 import { Tema05Estado } from './components/tema05-estado/Tema05Estado'
 import { Tema06UseEffect } from './components/tema06-use-effect/Tema06UseEffect'
 import { Tema07Formularios } from './components/tema07-formularios/Tema07Formularios'
+import { Tema08UseRef } from './components/tema08-use-ref/Tema08UseRef'
+import { Tema09ContextAPI } from './components/tema09-context-api/Tema09ContextAPI'
 
 function App() {
 
@@ -20,8 +22,10 @@ function App() {
       {/* <Tema04Eventos /> */}
       {/* <Tema05Estado /> */}
       {/* <Tema06UseEffect /> */}
+      {/* <Tema07Formularios /> */}
+      {/* <Tema08UseRef /> */}
 
-      <Tema07Formularios />
+      <Tema09ContextAPI />
       
     </div>
   )

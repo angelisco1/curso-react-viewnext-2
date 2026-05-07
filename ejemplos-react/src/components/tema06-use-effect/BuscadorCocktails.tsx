@@ -6,16 +6,16 @@ import { InfoCocktail } from "./InfoCocktail"
 const URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 
 
-const loadCocktails = async (filtro: string, setCocktails: Function) => {
+const loadCocktails = async (filtro: string): Promise<ListaCocktails> => {
   const resp = await fetch(URL + filtro)
   const data = await resp.json()
   
   console.log(data)
 
   if (Array.isArray(data.drinks)) {
-    setCocktails(data.drinks)
+    return data.drinks
   } else {
-    setCocktails([])
+    return []
   }
 }
 
@@ -34,8 +34,9 @@ export const BuscadorCocktails = () => {
   useEffect(() => {
     console.log('Ha cambiado el filtro')
 
-    const idTimeout = setTimeout(() => {
-      loadCocktails(filtro, setCocktails)
+    const idTimeout = setTimeout(async () => {
+      const cocktails = await loadCocktails(filtro)
+      setCocktails(cocktails)
     }, 1000)
 
     console.log('FILTRO 1: ', filtro)
