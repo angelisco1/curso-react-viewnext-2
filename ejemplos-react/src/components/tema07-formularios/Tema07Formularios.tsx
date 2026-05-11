@@ -1,3 +1,4 @@
+import { FormularioConLibreria } from "./FormularioConLibreria"
 import { FormularioControlado } from "./FormularioControlado"
 import { FormularioNoControlado } from "./FormularioNoControlado"
 
@@ -9,7 +10,9 @@ export const Tema07Formularios = () => {
 
       {/* <FormularioControlado /> */}
       
-      <FormularioNoControlado />
+      {/* <FormularioNoControlado /> */}
+
+      <FormularioConLibreria />
       
     </div>
   )
